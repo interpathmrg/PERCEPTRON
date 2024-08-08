@@ -28,7 +28,7 @@ def gradient_descent(x, y, weights, bias, learnrate, pred):
 # Data
 features = np.array(([0.1,0.5,0.2],[0.2,0.3,0.1],[0.7,0.4,0.2],[0.1,0.4,0.3]))
 targets = np.array([0,1,0,1])
-epochs = 30
+epochs = 4000
 learnrate = 0.1
 # pesos iniciales
 weights = np.array([0.4, 0.2, 0.6])
@@ -47,4 +47,7 @@ for e in range(epochs):
     loss = np.mean(cross_entropy(targets, out))
     errors.append(loss)
     print("\n========== Epoch", e,"==========")
+    print("New We: ", weights)
+    print("Target: ", targets)
+    print("Out   : ", out)
     print("Average loss: ", loss)
